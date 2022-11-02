@@ -28,6 +28,10 @@ img {
 .icons i {
     color: var(--var-dark-soft-icon);
 }
+
+.menu_bar {
+    padding-left: 0.75rem;
+}
 /* #endregion Common */
 
 /* #region Colors */
@@ -81,6 +85,30 @@ img {
 
 .user_bar {
     padding: 0.25rem 0.5rem;
+}
+
+.notice_message {
+    background-color: var(--var-notice-message);
+    height: 55px;
+}
+
+.notice_icon {
+    margin-right: 0.5rem;
+}
+
+.notice_icon i {
+    background-color: var(--var-light);
+    color: var(--var-notice-message);
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.notice_info {
+    font-size: 0.65rem;
+}
+
+.notice_info a {
+    color: var(--var-dark-soft-icon);
 }
 
 .chat {
