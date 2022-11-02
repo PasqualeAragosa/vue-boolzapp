@@ -9,6 +9,25 @@ img {
     max-width: 100%;
 }
 
+.profile_image {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+.user_bar {
+    width: 100%;
+    height: 50px;
+    background-color: var(--var-dark-soft-user-bar);
+}
+
+.user_bar .name {
+    font-size: 0.75rem;
+}
+
+.icons i {
+    color: var(--var-dark-soft-icon);
+}
 /* #endregion Common */
 
 /* #region Colors */
@@ -56,8 +75,12 @@ img {
 }
 
 .menu {
-    background-color: red;
     height: 100%;
+    padding: 0;
+}
+
+.user_bar {
+    padding: 0.25rem 0.5rem;
 }
 
 .chat {
