@@ -95,6 +95,8 @@ img {
     height: 100%;
 }
 
+/* #region menu */
+
 .menu {
     height: 100%;
     padding: 0;
@@ -137,7 +139,8 @@ img {
 }
 
 .new_chat_bar input::placeholder {
-    font-size: 0.75rem;
+    font-size: 0.6rem;
+    margin: auto 0;
 }
 
 .user_box {
@@ -156,10 +159,15 @@ img {
 .time_last_message span {
     font-size: 0.5rem;
 }
+/* #endregion menu */
 
+/* #region chat */
 .chat {
-    background-color: black;
-    height: 100%;
+    /* background-color: black;
+    height: 100%; */
+    padding: 0;
+    border-left: 1px solid var(--var-dark-soft-icon);
 }
+/* #endregion chat */
 /* #endregion Body */
 
