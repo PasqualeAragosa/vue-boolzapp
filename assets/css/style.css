@@ -11,6 +11,21 @@ img {
 
 /* #endregion Common */
 
+/* #region Colors */
+:root {
+    --var-bg-top: #009688;
+    --var-bg-body: #DBDBD3;
+    --var-light: #FFFFFF;
+    --var-dark: #000000;
+    --var-dark-soft-user-bar: #E9EBEB;
+    --var-dark-soft-menu-user-selected: #EAEAEA;
+    --var-dark-soft-messagge-bar: #F3EEEA;
+    --var-dark-soft-rubric-text: #C2C5D1;
+    --var-dark-soft-icon: #B1B1B1;
+    --var-notice-message: #8EDAFC;
+}
+/* #endregion Colors */
+
 /* #region Body */
 
 /* #endregion Body */
