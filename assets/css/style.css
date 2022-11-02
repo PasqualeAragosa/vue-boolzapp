@@ -27,6 +27,42 @@ img {
 /* #endregion Colors */
 
 /* #region Body */
+.wrapper {
+    height: 100vh;
+    position: relative;
+}
 
+.wrapper_top {
+    height: 100px;
+    background-color: var(--var-bg-top);
+}
+
+.wrapper_body {
+    height: calc(100vh - 100px);
+    background-color: var(--var-bg-body);
+}
+
+.wrapper_content {
+    width: 90vw;
+    height: 90vh;
+    background-color: var(--var-light);
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.row {
+    height: 100%;
+}
+
+.menu {
+    background-color: red;
+    height: 100%;
+}
+
+.chat {
+    background-color: black;
+    height: 100%;
+}
 /* #endregion Body */
 
