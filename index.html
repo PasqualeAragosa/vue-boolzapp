@@ -22,7 +22,7 @@
             <!-- /.wrapper_body -->
             <div class="wrapper_content container">
                 <div class="row">
-                    <div class="col-4 menu">
+                    <div class="menu col-4">
                         <div class="user_bar d-flex justify-content-between align-items-center">
                             <div class="myself_content d-flex justify-content-start align-items-center">
                                 <img src="./assets/img/avatar_io.jpg" alt="personal profile image" class="profile_image">
@@ -66,15 +66,19 @@
                              </div>
                         </div>
                         <!-- /.new_chat_bar -->
+
+
                         <div class="rubric">
-                            <div class="user_box d-flex justify-content-between">
+                            <div v-for="(contact, index) in contacts" class="user_box d-flex justify-content-between" :class="activeIndex === index ? 'active' : '' " @click="setActiveIndex(index)">
                                 <div class="details_box d-flex">
                                     <div class="profile_image_rubric">
-                                        <img src="./assets/img/avatar_1.jpg" alt="" class="user_image">
+                                        <img :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="" class="user_image">
                                     </div>
                                     <!-- /.profile_image_rubric -->
-                                    <div class="info_rubric">
-                                        <span class="name_user d-block">Michele</span>
+                                    <div class="info_rubric d-flex flex-column">
+                                        <span class="name_user d-block">
+                                            {{contact.name}}
+                                        </span>
                                         <!-- /.name_user -->
                                         <span class="last_access">Ultimo messaggio inviato</span>
                                         <!-- /.last_access -->
@@ -82,8 +86,8 @@
                                     <!-- /.info_rubric -->
                                 </div>
                                 <!-- /.details_box -->
-                                <div class="time_last_message">
-                                    <span class="time">12:00</span>
+                                <div class="last_access">
+                                    <span>12:00</span>
                                     <!-- /.time -->
                                 </div>
                                 <!-- /.time_last_message -->
@@ -91,14 +95,21 @@
                             <!-- /.user_box -->
                         </div>
                         <!-- /.rubric -->
+
+
                     </div>
                     <!-- /.menu -->
-                    <div class="col-8 chat">
+                    <div class="chat col-8">
                         <div class="user_bar d-flex justify-content-between align-items-center">
                             <div class="myself_content d-flex justify-content-start align-items-center">
-                                <img src="./assets/img/avatar_1.jpg" alt="personal profile image" class="profile_image">
-                                <span class="name_profile p-1">Michele</span>
-                                <!-- /.name -->
+                                <img :src="'./assets/img/avatar' + contacts[activeIndex].avatar  + '.jpg'" alt="personal profile image" class="profile_image">
+                                <div class="chat_info d-flex flex-column">
+                                    <span class="name_user d-block">{{contacts[activeIndex].name}}</span>
+                                    <!-- /.name_user -->
+                                    <span class="last_access">Ultimo messaggio inviato alle 12:00</span>
+                                    <!-- /.last_access -->
+                                </div>
+                                <!-- /.chat_info -->
                             </div>
                             <!-- /.myself_content -->
                             <div class="icons">
@@ -111,6 +122,21 @@
                         <!-- /.user_bar -->
                         <div class="chat_content"></div>
                         <!-- /.chat_content -->
+                        <div class="text_bar d-flex justify-content-evenly align-items-center">
+                            <div class="emoji">
+                                <i class="fa-regular fa-face-smile"></i>
+                            </div>
+                            <!-- /.emoji -->
+                            <div class="message">
+                                <input type="text" size="70" placeholder="Scrivi un messaggio">
+                            </div>
+                            <!-- /.message -->
+                            <div class="mic">
+                                <i class="fa-solid fa-microphone"></i>
+                            </div>
+                            <!-- /.mic -->
+                        </div>
+                        <!-- /.text_bar -->
                     </div>
                     <!-- /.chat -->
                 </div>

@@ -9,10 +9,15 @@ img {
     max-width: 100%;
 }
 
+.active {
+    background-color: var(--var-dark-soft-menu-user-selected);
+}
+
 .user_bar {
     width: 100%;
     height: 50px;
     background-color: var(--var-dark-soft-user-bar);
+    padding: 0.25rem 0.75rem;
 }
 
 .user_image {
@@ -27,10 +32,9 @@ img {
     border-radius: 50%;
 }
 
-.rubric {
-    background-color: var(--var-light);
+.last_access {
     color: var(--var-dark-soft-rubric-text);
-    font-size: 0.65rem;
+    font-size: 0.5rem;
 }
 
 .name_profile {
@@ -43,6 +47,7 @@ img {
 
 .icons i {
     color: var(--var-dark-soft-icon);
+    font-size: 0.85rem;
 }
 
 .menu_bar {
@@ -63,6 +68,7 @@ img {
     --var-dark-soft-rubric-text: #C2C5D1;
     --var-dark-soft-icon: #B1B1B1;
     --var-notice-message: #8EDAFC;
+    --var-dark-soft-text-icon: #6B7376;
 }
 /* #endregion Colors */
 
@@ -96,14 +102,9 @@ img {
 }
 
 /* #region menu */
-
 .menu {
     height: 100%;
     padding: 0;
-}
-
-.user_bar {
-    padding: 0.25rem 0.5rem;
 }
 
 .notice_message {
@@ -130,6 +131,10 @@ img {
     color: var(--var-dark-soft-icon);
 }
 
+.new_chat_bar {
+    height: 40px;
+}
+
 .new_chat_bar span {
     background-color: var(--var-light);
 }
@@ -141,6 +146,11 @@ img {
 .new_chat_bar input::placeholder {
     font-size: 0.6rem;
     margin: auto 0;
+}
+
+.rubric {
+    overflow: scroll;
+    height: calc(100% - 145px);
 }
 
 .user_box {
@@ -155,19 +165,47 @@ img {
     font-size: 0.85rem;
     color: var(--var-dark);
 }
-
-.time_last_message span {
-    font-size: 0.5rem;
-}
 /* #endregion menu */
 
 /* #region chat */
 .chat {
-    /* background-color: black;
-    height: 100%; */
     padding: 0;
     border-left: 1px solid var(--var-dark-soft-icon);
 }
+
+.chat_info {
+    margin-left: 0.5rem;
+}
+
+.chat .last_access {
+    color: var(--var-dark-soft-text-icon);
+}
+
+.chat_content {
+    height: calc(100% - 100px);
+    background-image: url('../img/mine.jpg');
+}
+
+.text_bar {
+    background-color: var(--var-dark-soft-messagge-bar);
+    height: 50px;
+}
+
+.message input {
+    border-radius: 0.25rem;
+    border: 0;
+    padding: 0.25rem;
+}
+
+.message input::placeholder {
+    font-size: 0.75rem;
+}
+
+.text_bar i {
+    color: var(--var-dark-soft-text-icon);
+}
+
 /* #endregion chat */
+
 /* #endregion Body */
 
