@@ -111,6 +111,18 @@ img {
     color: var(--var-dark-soft-icon);
 }
 
+.new_chat_bar span {
+    background-color: var(--var-light);
+}
+
+.new_chat_bar i {
+    color: var(--var-dark-soft-icon);
+}
+
+.new_chat_bar input::placeholder {
+    font-size: 0.75rem;
+}
+
 .chat {
     background-color: black;
     height: 100%;
