@@ -172,6 +172,6 @@ createApp({
     methods: {
         setActiveIndex(index) {
             this.activeIndex = index;
-        }
+        },
     }
 }).mount('#app');

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Vue Hello</title>
+    <title>Bollzapp</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,13 +16,13 @@
 
     <div id="app">
         <div class="wrapper">
-            <div class="wrapper_top"></div>
+            <section class="wrapper_top"></section>
             <!-- /.wrapper_top -->
-            <div class="wrapper_body"></div>
+            <section class="wrapper_body"></section>
             <!-- /.wrapper_body -->
-            <div class="wrapper_content container">
+            <section class="wrapper_content container">
                 <div class="row">
-                    <div class="menu col-4">
+                    <section class="menu col-4">
                         <div class="user_bar d-flex justify-content-between align-items-center">
                             <div class="myself_content d-flex justify-content-start align-items-center">
                                 <img src="./assets/img/avatar_io.jpg" alt="personal profile image" class="profile_image">
@@ -66,8 +66,6 @@
                              </div>
                         </div>
                         <!-- /.new_chat_bar -->
-
-
                         <div class="rubric">
                             <div v-for="(contact, index) in contacts" class="user_box d-flex justify-content-between" :class="activeIndex === index ? 'active' : '' " @click="setActiveIndex(index)">
                                 <div class="details_box d-flex">
@@ -95,11 +93,9 @@
                             <!-- /.user_box -->
                         </div>
                         <!-- /.rubric -->
-
-
-                    </div>
+                    </section>
                     <!-- /.menu -->
-                    <div class="chat col-8">
+                    <section class="chat col-8">
                         <div class="user_bar d-flex justify-content-between align-items-center">
                             <div class="myself_content d-flex justify-content-start align-items-center">
                                 <img :src="'./assets/img/avatar' + contacts[activeIndex].avatar  + '.jpg'" alt="personal profile image" class="profile_image">
@@ -120,15 +116,26 @@
                             <!-- /.icons -->
                         </div>
                         <!-- /.user_bar -->
-                        <div class="chat_content"></div>
+
+
+                        <div class="chat_content py-5">
+                            <div class="message_content">
+                                <ul v-for="(element) in contacts[activeIndex].messages" class="list-unstyled">
+                                    <li>{{ element.message }}</li>
+                                </ul>
+                            </div>
+                            <!-- /.message_content -->
+                        </div>
                         <!-- /.chat_content -->
+
+
                         <div class="text_bar d-flex justify-content-evenly align-items-center">
                             <div class="emoji">
                                 <i class="fa-regular fa-face-smile"></i>
                             </div>
                             <!-- /.emoji -->
                             <div class="message">
-                                <input type="text" size="70" placeholder="Scrivi un messaggio">
+                                <input type="text" size="40" placeholder="Scrivi un messaggio">
                             </div>
                             <!-- /.message -->
                             <div class="mic">
@@ -137,11 +144,11 @@
                             <!-- /.mic -->
                         </div>
                         <!-- /.text_bar -->
-                    </div>
+                    </section>
                     <!-- /.chat -->
                 </div>
                 <!-- /.row -->
-            </div>
+            </section>
             <!-- /.content -->
         </div>
         <!-- /.wrapper -->

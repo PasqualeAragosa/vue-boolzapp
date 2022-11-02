@@ -186,6 +186,12 @@ img {
     background-image: url('../img/mine.jpg');
 }
 
+.message_content {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+
 .text_bar {
     background-color: var(--var-dark-soft-messagge-bar);
     height: 50px;
