@@ -120,8 +120,12 @@
 
                         <div class="chat_content py-5">
                             <div class="message_content">
-                                <ul v-for="(element) in contacts[activeIndex].messages" class="list-unstyled">
-                                    <li>{{ element.message }}</li>
+                                <ul class="d-flex flex-column">
+                                    <li v-for="(element) in contacts[activeIndex].messages" class="list-unstyled" :class="element.status === 'sent' ? 'align-self-end' : 'align-self-start'">
+                                        <span :class="element.status === 'sent' ? 'sent align-self-end' : 'received align-self-start'">
+                                            {{ element.message }}
+                                        </span>
+                                    </li>
                                 </ul>
                             </div>
                             <!-- /.message_content -->
