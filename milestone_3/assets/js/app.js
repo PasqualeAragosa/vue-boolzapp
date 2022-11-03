@@ -183,15 +183,22 @@ createApp({
             console.log(this.newMessage);
 
             if (this.newMessage.message.length > 0) {
-                // console.log(this.contacts[this.activeIndex].messages);
-                // console.log('This.newMessage: ', this.newMessage);
                 const message = {
                     ... this.newMessage
                 };
-                
+
                 this.contacts[this.activeIndex].messages.push(message);
                 this.newMessage.message = '';
+                setTimeout(this.replyToMessage ,1000);
             }
         },
+        replyToMessage() {
+            const message = {
+                date: '10/01/2020 16:15:22',
+                message: 'Ok',
+                status: 'received' 
+            };
+            this.contacts[this.activeIndex].messages.push(message);
+        }
     }
 }).mount('#app');
