@@ -9,6 +9,10 @@ img {
     max-width: 100%;
 }
 
+ul {
+    padding-left: 0;
+}
+
 .active {
     background-color: var(--var-dark-soft-menu-user-selected);
 }
@@ -199,11 +203,13 @@ img {
     width: 80%;
     height: 100%;
     margin: auto;
-    font-size: 0.5rem;
+    font-size: 0.75rem;
 }
 
 .message_content li {
-    margin: 0.85rem 0;
+    margin: 0.25rem 0;
+    max-width: 200px;
+    display: flex;
 }
 
 .message_content span {
@@ -229,7 +235,6 @@ img {
 .text_bar i {
     color: var(--var-dark-soft-text-icon);
 }
-
 /* #endregion chat */
 
 /* #endregion Body */
