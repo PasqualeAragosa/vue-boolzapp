@@ -208,15 +208,21 @@ createApp({
             this.contacts.forEach(contact => {
                 const nameContact = contact.name.toLowerCase();
                 const searchName = this.searchName.toLowerCase();
+                let counter = 0;
 
-                if (nameContact === searchName) {
+                for (let i = 0; i < searchName.length; i++) {
+                    if (searchName.charAt(i) === nameContact.charAt(i)) {
+                        counter ++;
+                    }
+                    
+                }
+
+                if (counter === searchName.length) {
                     contact.visible = true;
                 } else {
                     contact.visible = false;
                 }
             });
-
-            //this.contacts.forEach(contact => console.log(contact.visible));
         }
     }
 }).mount('#app');
