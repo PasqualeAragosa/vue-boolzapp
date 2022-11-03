@@ -167,8 +167,12 @@ createApp({
                 }
             ],
             activeIndex: 0,
-            newMessage: '',
-            num: 90
+            newMessage:
+            {
+                date: '10/01/2020 15:51:00',
+                message: '',
+                status: 'sent'
+            },
         }
     },
     methods: {
@@ -176,11 +180,18 @@ createApp({
             this.activeIndex = index;
         },
         addMessage() {
-            console.log('Sono qui');
-            // if (this.newMessage.length > 0) {
-            //     this.contacts[this.activeIndex].messages.push(this.newMessage);
-            //     this.newMessage = '';
-            // }
+            console.log(this.newMessage);
+
+            if (this.newMessage.message.length > 0) {
+                // console.log(this.contacts[this.activeIndex].messages);
+                // console.log('This.newMessage: ', this.newMessage);
+                const message = {
+                    ... this.newMessage
+                };
+                
+                this.contacts[this.activeIndex].messages.push(message);
+                this.newMessage.message = '';
+            }
         },
     }
 }).mount('#app');

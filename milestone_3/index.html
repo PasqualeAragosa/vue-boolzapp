@@ -16,13 +16,22 @@
 
     <div id="app">
         <div class="wrapper">
+
+
             <section class="wrapper_top"></section>
             <!-- /.wrapper_top -->
+
+
             <section class="wrapper_body"></section>
             <!-- /.wrapper_body -->
+
+
             <section class="wrapper_content container">
                 <div class="row">
+
+
                     <section class="menu col-4">
+
                         <div class="user_bar d-flex justify-content-between align-items-center">
                             <div class="myself_content d-flex justify-content-start align-items-center">
                                 <img src="./assets/img/avatar_io.jpg" alt="personal profile image" class="profile_image">
@@ -38,6 +47,7 @@
                             <!-- /.icons -->
                         </div>
                         <!-- /.user_bar -->
+
                         <div class="notice_message d-flex align-items-center">
                             <div class="menu_bar d-flex justify-content-start align-items-center">
                                 <div class="notice_icon">
@@ -55,6 +65,7 @@
                             <!-- /.menu_bar -->
                         </div>
                         <!-- /.notice_message -->
+
                         <div class="new_chat_bar">
                             <div class="input-group input-group-sm p-1">
                                 <span class="input-group-text rounded-0" id="inputGroup-sizing-sm">
@@ -66,6 +77,7 @@
                              </div>
                         </div>
                         <!-- /.new_chat_bar -->
+
                         <div class="rubric">
                             <div v-for="(contact, index) in contacts" class="user_box d-flex justify-content-between" :class="activeIndex === index ? 'active' : '' " @click="setActiveIndex(index)">
                                 <div class="details_box d-flex">
@@ -93,9 +105,13 @@
                             <!-- /.user_box -->
                         </div>
                         <!-- /.rubric -->
+
                     </section>
+
+
                     <!-- /.menu -->
                     <section class="chat col-8">
+
                         <div class="user_bar d-flex justify-content-between align-items-center">
                             <div class="myself_content d-flex justify-content-start align-items-center">
                                 <img :src="'./assets/img/avatar' + contacts[activeIndex].avatar  + '.jpg'" alt="personal profile image" class="profile_image">
@@ -117,7 +133,6 @@
                         </div>
                         <!-- /.user_bar -->
 
-
                         <div class="chat_content py-5">
                             <div class="message_content">
                                 <ul class="d-flex flex-column">
@@ -132,7 +147,6 @@
                         </div>
                         <!-- /.chat_content -->
 
-
                         <div class="text_bar d-flex justify-content-evenly align-items-center">
 
                             <div class="emoji">
@@ -141,8 +155,7 @@
                             <!-- /.emoji -->
 
                             <div class="message">
-                                <input type="text" size="70" v-model="newMessage" @keyup.enter="addMessage" placeholder="Scrivi un messaggio">
-                                {{newMessage}}
+                                <input type="text" size="40" v-model="newMessage.message" @keyup.enter="addMessage" placeholder="Scrivi un messaggio">
                             </div>
                             <!-- /.message -->
 
@@ -153,12 +166,17 @@
 
                         </div>
                         <!-- /.text_bar -->
+
                     </section>
                     <!-- /.chat -->
+
+
                 </div>
                 <!-- /.row -->
             </section>
             <!-- /.content -->
+
+
         </div>
         <!-- /.wrapper -->
     </div>

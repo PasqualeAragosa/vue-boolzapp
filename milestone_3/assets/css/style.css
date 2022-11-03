@@ -163,7 +163,7 @@ ul {
 
 .rubric {
     overflow: scroll;
-    height: calc(100% - 145px);
+    height: 391.7px;
 }
 
 .user_box {
@@ -195,8 +195,9 @@ ul {
 }
 
 .chat_content {
-    height: calc(100% - 100px);
+    height: 436.7px;
     background-image: url('../img/mine.jpg');
+    overflow: auto;
 }
 
 .message_content {
