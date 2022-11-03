@@ -168,6 +168,7 @@ createApp({
             ],
             activeIndex: 0,
             newMessage: '',
+            num: 90
         }
     },
     methods: {
