@@ -173,8 +173,7 @@ createApp({
                 date: '10/01/2020 15:51:00',
                 message: '',
                 status: 'sent'
-            },
-            lastMessage: this.activeIndex,
+            },          
         }
     },
     methods: {
@@ -227,7 +226,9 @@ createApp({
                 } else {
                     contact.visible = false;
                 }
+
+                
             });
-        }
+        },
     }
 }).mount('#app');
