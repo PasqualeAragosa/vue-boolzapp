@@ -48,6 +48,7 @@ ul {
     color: var(--var-dark-soft-rubric-text);
     font-size: 0.5rem;
     max-width: 130px;
+    font-size: 0.60rem;
 }
 
 .name_profile {
@@ -155,6 +156,7 @@ ul {
 
 .user_box {
     padding: 0.25rem 0.75rem;
+    max-height: 60px;
 }
 
 .profile_image_rubric {
