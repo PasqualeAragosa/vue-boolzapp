@@ -85,7 +85,7 @@
                                             </span>
                                             <!-- /.name_user -->
                                             <span class="last_access">
-                                                {{contact.messages[0].message}}
+                                                {{contact.messages[contact.messages.length - 1].message}}
                                             </span>
                                             <!-- /.last_access -->
                                         </div>
@@ -94,7 +94,7 @@
                                     <!-- /.details_box -->
 
                                     <div class="last_access">
-                                        <span>12:00</span>
+                                        <span>{{contact.messages[contact.messages.length - 1].date.slice(11, 16)}}</span>
                                     </div>
                                     <!-- /.last_access -->
                                 </div>

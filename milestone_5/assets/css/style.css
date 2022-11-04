@@ -47,6 +47,7 @@ ul {
 .last_access {
     color: var(--var-dark-soft-rubric-text);
     font-size: 0.5rem;
+    max-width: 130px;
 }
 
 .name_profile {
@@ -226,6 +227,12 @@ ul {
     font-size: 0.75rem;
 }
 
+.message_content .last_access {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+}
+
 .text_bar {
     background-color: var(--var-dark-soft-messagge-bar);
     height: 50px;
@@ -247,9 +254,3 @@ ul {
 /* #endregion chat */
 
 /* #endregion Body */
-
-.message_content .last_access {
-    position: absolute;
-    bottom: 0;
-    right: 5px;
-}
