@@ -84,8 +84,11 @@
                                                 {{contact.name}}
                                             </span>
                                             <!-- /.name_user -->
-                                            <span class="last_access">
+                                            <span class="last_access" v-if="contact.messages.length > 0">
                                                 {{contact.messages[contact.messages.length - 1].message}}
+                                            </span>
+                                            <span class="last_access" v-else>
+                                                Nessun messaggio
                                             </span>
                                             <!-- /.last_access -->
                                         </div>
@@ -93,7 +96,7 @@
                                     </div>
                                     <!-- /.details_box -->
 
-                                    <div class="last_access">
+                                    <div class="last_access" v-if="contact.messages.length > 0">
                                         <span>{{contact.messages[contact.messages.length - 1].date.slice(11, 16)}}</span>
                                     </div>
                                     <!-- /.last_access -->
@@ -136,7 +139,7 @@
                         <div class="chat_content py-5">
                             <div class="message_content">
                                 <ul class="d-flex flex-column">
-                                    <li v-for="(element) in contacts[activeIndex].messages" class="list-unstyled" :class="element.status === 'sent' ? 'sent align-self-end' : 'received align-self-start'">
+                                    <li v-for="(element, index) in contacts[activeIndex].messages" class="list-unstyled" :class="element.status === 'sent' ? 'sent align-self-end' : 'received align-self-start'">
                                         {{ element.message }}
                                         <small class="options">
                                             <div class="dropdown">
@@ -144,8 +147,7 @@
                                                     <i class="fa-solid fa-chevron-down" @click=""></i>                                                     
                                                 </button>
                                                 <ul class="dropdown-menu">
-                                                  <li><a @click="removeMessage(element)" class="dropdown-item" href="#">Delete Message</a></li>
-                                                  <li><a class="dropdown-item" href="#">Info Message</a></li>
+                                                  <li><a @click.stop="removeMessage(index)" class="dropdown-item" href="#">Delete Message</a></li>
                                                 </ul>
                                               </div>
                                         </small>
