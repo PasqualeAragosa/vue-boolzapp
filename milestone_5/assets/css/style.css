@@ -247,3 +247,9 @@ ul {
 /* #endregion chat */
 
 /* #endregion Body */
+
+.message_content .last_access {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+}

@@ -21,7 +21,6 @@
 
                 <div class="row">
 
-
                     <div class="menu col-4">
 
                         <div class="user_bar d-flex justify-content-between align-items-center">
@@ -72,9 +71,7 @@
 
                         <div class="rubric">
 
-
                             <div v-for="(contact, index) in contacts" class="user_box " :class="activeIndex === index ? 'active' : '' " @click="setActiveIndex(index)">
-
 
                                 <div v-if="contact.visible === true" class="d-flex justify-content-between">
                                     <div class="details_box d-flex">
@@ -87,7 +84,9 @@
                                                 {{contact.name}}
                                             </span>
                                             <!-- /.name_user -->
-                                            <span class="last_access">Ultimo messaggio inviato</span>
+                                            <span class="last_access">
+                                                {{contact.messages[0].message}}
+                                            </span>
                                             <!-- /.last_access -->
                                         </div>
                                         <!-- /.info_rubric -->
@@ -96,11 +95,9 @@
 
                                     <div class="last_access">
                                         <span>12:00</span>
-                                        <!-- /.time -->
                                     </div>
-                                    <!-- /.time_last_message -->
+                                    <!-- /.last_access -->
                                 </div>
-
 
                             </div>
                             <!-- /.user_box -->
@@ -141,8 +138,8 @@
                                 <ul class="d-flex flex-column">
                                     <li v-for="(element) in contacts[activeIndex].messages" class="list-unstyled" :class="element.status === 'sent' ? 'sent align-self-end' : 'received align-self-start'">
                                         {{ element.message }}
-                                        <div class="options">
-                                            <small class="dropdown">
+                                        <small class="options">
+                                            <div class="dropdown">
                                                 <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="fa-solid fa-chevron-down" @click=""></i>                                                     
                                                 </button>
@@ -150,9 +147,16 @@
                                                   <li><a @click="removeMessage(element)" class="dropdown-item" href="#">Delete Message</a></li>
                                                   <li><a class="dropdown-item" href="#">Info Message</a></li>
                                                 </ul>
-                                              </small>
-                                        </div>
+                                              </div>
+                                        </small>
                                         <!-- /.options -->
+
+                                        <div class="last_access">
+                                            <span>
+                                                {{element.date.slice(11, 16)}}
+                                            </span>
+                                        </div>
+                                        <!-- /.last_access -->
                                     </li>
                                 </ul>
                             </div>
@@ -183,7 +187,6 @@
                     </div>
                     <!-- /.chat -->
 
-
                 </div>
                 <!-- /.row -->
             </div>
@@ -195,6 +198,8 @@
     <!-- /#app -->
 
 
+    <!-- Luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.1.0/build/global/luxon.min.js"></script>
     <!-- Main.js link-->
     <script src="./assets/js/main.js"></script>
     <!-- Vue link -->

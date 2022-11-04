@@ -174,6 +174,7 @@ createApp({
                 message: '',
                 status: 'sent'
             },
+            lastMessage: this.activeIndex,
         }
     },
     methods: {
