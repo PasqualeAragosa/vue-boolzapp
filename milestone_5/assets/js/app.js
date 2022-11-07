@@ -212,21 +212,12 @@ createApp({
             this.contacts.forEach(contact => {
                 const nameContact = contact.name.toLowerCase();
                 const searchName = this.searchName.toLowerCase();
-                let counter = 0;
 
-                for (let i = 0; i < searchName.length; i++) {
-                    if (searchName.charAt(i) === nameContact.charAt(i)) {
-                        counter ++;
-                    }
-                    
-                }
-
-                if (counter === searchName.length) {
+                if (nameContact.includes(searchName)) {
                     contact.visible = true;
                 } else {
                     contact.visible = false;
                 }
-
                 
             });
         },

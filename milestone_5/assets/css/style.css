@@ -150,7 +150,7 @@ ul {
 }
 
 .rubric {
-    overflow: scroll;
+    overflow-y: scroll;
     height: 391.7px;
 }
 
